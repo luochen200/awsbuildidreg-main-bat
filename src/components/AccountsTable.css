@@ -1,0 +1,511 @@
+.accounts-table-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--bg-primary);
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.search-input {
+  min-width: 300px;
+}
+
+.table-stats {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.table-wrapper {
+  flex: 1;
+  overflow: auto;
+}
+
+.accounts-table {
+  min-width: 100%;
+}
+
+.accounts-table th {
+  cursor: pointer;
+  user-select: none;
+}
+
+.accounts-table th:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.email-cell {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+}
+
+.password-hidden {
+  font-family: monospace;
+  color: var(--text-tertiary);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-not-registered {
+  background-color: var(--info-light);
+  color: var(--info);
+}
+
+.status-in-progress {
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+
+.status-registered {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.status-error {
+  background-color: var(--error-light);
+  color: var(--error);
+}
+
+.error-cell {
+  max-width: 200px;
+}
+
+.error-text {
+  color: var(--error);
+  font-size: 13px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.action-button:hover:not(:disabled) {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.action-button-primary {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.action-button-primary:hover:not(:disabled) {
+  background-color: var(--accent-light);
+}
+
+.action-button-danger {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.action-button-danger:hover:not(:disabled) {
+  background-color: var(--error-light);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.pagination-button {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: var(--bg-hover);
+  border-color: var(--border-hover);
+}
+
+.pagination-info {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal-content {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: auto;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-size: 24px;
+  border: none;
+}
+
+.modal-close:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.detail-item {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.detail-item label {
+  flex-shrink: 0;
+  width: 120px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.detail-item span {
+  flex: 1;
+  color: var(--text-primary);
+}
+
+.monospace {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+}
+
+.button-primary {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.button-secondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.button-secondary:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-hover);
+}
+
+.action-button-success {
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.action-button-success:hover:not(:disabled) {
+  background-color: var(--success-light);
+}
+
+.action-button-warning {
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.action-button-warning:hover:not(:disabled) {
+  background-color: #fef3c7;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* OAuth 状态相关样式 */
+.oauth-status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.oauth-status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.oauth-status-not-authorized {
+  background-color: var(--info-light);
+  color: var(--info);
+}
+
+.oauth-status-in-progress {
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+
+.oauth-status-authorized {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.oauth-status-error {
+  background-color: var(--error-light);
+  color: var(--error);
+}
+
+.oauth-info-button {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: none;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oauth-info-button:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* OAuth 详情模态框样式 */
+.oauth-detail-modal {
+  max-width: 700px;
+}
+
+.detail-section {
+  margin-bottom: 24px;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.token-display {
+  background-color: var(--bg-tertiary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.expired-token {
+  color: var(--error);
+  font-weight: 500;
+}
+
+.valid-token {
+  color: var(--success);
+  font-weight: 500;
+}
+/* 
+复制 Token 按钮样式 */
+.copy-token-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copy-token-button:hover {
+  background-color: var(--bg-hover);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.copy-token-button:active {
+  transform: scale(0.95);
+}
+
+/* 模态框按钮图标样式 */
+.button-secondary svg,
+.button-primary svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.modal-footer .button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 表头操作区域 */
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.batch-export-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.batch-export-button svg {
+  flex-shrink: 0;
+}
+
+/* 复选框列 */
+.checkbox-cell {
+  width: 40px;
+  text-align: center;
+  cursor: default !important;
+}
+
+.checkbox-cell input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+/* 半选状态样式 */
+.checkbox-cell input[type="checkbox"]:indeterminate {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
