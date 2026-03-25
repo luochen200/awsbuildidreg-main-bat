@@ -1,0 +1,1 @@
+# awsbuildidreg-main-bat
